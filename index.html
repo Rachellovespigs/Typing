@@ -35,6 +35,10 @@
         font-family:Verdana, Geneva, Tahoma, sans-serif;
     }
 
+    img{
+        text-align: center;
+    }
+
 
 </style>
 
@@ -43,16 +47,17 @@
     <h1>Happy Typing</h1>
     <h2 id="words">Type Here</h2>
     <button id="deleteBtn">Delete</button>
+    <img src="SkatingPig.png">
 
     <script>
         var words = document.querySelector("#words")
         var keyLog = []
         var deleteBtn = document.getElementById("deleteBtn")
-        deleteBtn.onClick = handleDelete()
+        deleteBtn.onclick = handleDelete
 
         function handleDelete(){
-            console.log("pop")
             keyLog.pop()
+            words.innerHTML = keyLog.join("")
         }
 
         document.onkeydown = function(event){
